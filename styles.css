@@ -1,18 +1,18 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
 :root {
-  --color-primary: #000;
+  --color-primary: #fff;
   --color-primary-alt: #000;
-  --color-secondary: #ffce00;
+  --color-secondary: #ff00ac;
   --color-background: #8f00ff;
-  --color-text: #fff;
+  --color-text: #000;
   --color-light: #fff;
   --color-anchor: #000;
   --font-family: "Krona One", sans-serif;
   --font-weight-strong: 800;
-  --font-size-h1: 6rem;
-  --font-size-h2: 3rem;
-  --font-size-h3: 2rem;
+  --font-size-h1: 4rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
   --font-size-h4: 1.35rem;
   --font-size-text: 1.15rem;
   --border-radius: 8px;
@@ -79,6 +79,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
 h1,
 h2,
 h3,
@@ -90,11 +91,12 @@ h4 {
 
 h1 {
   font-size: var(--font-size-h1);
+  font-size: clamp(2rem, 5vw, var(--font-size-h1));
 }
 
 h2 {
   font-size: var(--font-size-h2);
-  font-size: clamp(2rem, 4vw, var(--font-size-h2));
+  font-size: clamp(1rem, 4vw, var(--font-size-h2));
 }
 
 #main h2 {
@@ -116,6 +118,17 @@ li {
 
 p {
   margin: 0 0 1rem;
+}
+
+header {
+  display: grid;
+  place-items: center;
+  padding: 10vh 2rem;
+  color: var(--color-primary);
+}
+
+header .container {
+  max-width: 80ch;
 }
 
 article .container > ul:not(.features) > li + li,
@@ -155,7 +168,7 @@ body {
 
 nav {
   width: 100%;
-  padding: 6vh 2rem;
+  padding: 4vh 2rem;
 }
 nav ul {
   display: -webkit-box;
@@ -163,36 +176,61 @@ nav ul {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  list-style: none;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 nav ul a {
   display: inline-grid;
   padding: 0.5rem;
   color: var(--color-primary);
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: var(--font-weight-strong);
 }
 nav ul a::after {
-  width: 100%;
+  width: 0;
   height: 0.33em;
   background-color: var(--color-secondary);
-  opacity: 0;
+
+  transition: all 0.5s;
   content: "";
 }
 nav ul a:hover::after,
 nav ul a:focus::after {
-  opacity: 1;
+  width: 100%;
   color: var(--color-secondary);
 }
 nav ul li {
   margin: 0 0.5rem 0 0;
+}
+
+a.button,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+  background-color: var(--color-secondary);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  padding: 0.3em 1.25em;
+  min-width: 10ch;
+  min-height: 3rem;
+
+  text-align: center;
+  line-height: 1.1;
+
+  transition: all 0.5s;
+}
+
+a.button:hover,
+button.button:hover {
+  padding-left: 2em;
 }
