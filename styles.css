@@ -5,6 +5,7 @@
   --color-primary-alt: #000;
   --color-secondary: #ff00ac;
   --color-background: #8f00ff;
+  --color-background-light: #f2dcff;
   --color-text: #000;
   --color-light: #fff;
   --color-anchor: #000;
@@ -99,8 +100,18 @@ h2 {
   font-size: clamp(1rem, 4vw, var(--font-size-h2));
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+#main {
+  padding: 2rem 0;
+  background-color: var(--color-primary);
+}
+
 #main h2 {
-  color: var(--color-secondary);
+  color: var(--color-primary-alt);
 }
 
 h3 {
@@ -121,25 +132,13 @@ p {
 }
 
 header {
-  display: grid;
-  place-items: center;
   padding: 10vh 2rem;
   color: var(--color-primary);
 }
 
-header .container {
+.container {
   max-width: 80ch;
-}
-
-article .container > ul:not(.features) > li + li,
-article .container > ol > li + li {
-  margin-top: 1rem;
-}
-article .container * + h2 {
-  margin-top: 4rem;
-}
-article .container * + h3 {
-  margin-top: 2rem;
+  margin: 0 auto;
 }
 
 strong {
@@ -233,4 +232,38 @@ button.button {
 a.button:hover,
 button.button:hover {
   padding-left: 2em;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+.row {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
+}
+
+#Lorem-1 .row {
+  align-items: center;
+}
+
+#Lorem-1 ul {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr));
+}
+
+#Lorem-1 ul li {
+  padding: 1rem;
+  background: var(--color-background-light);
+  border-radius: 0.5rem;
+}
+
+#Lorem-1 ul li h3 {
+  font-size: 1.2rem;
+}
+
+#Lorem-1 ul li p {
+  font-size: 0.8rem;
 }
