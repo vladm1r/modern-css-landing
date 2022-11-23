@@ -16,7 +16,7 @@
   --font-size-h3: 1.5rem;
   --font-size-h4: 1.35rem;
   --font-size-text: 1.15rem;
-  --border-radius: 8px;
+  --border-radius: 0.5rem;
 }
 /*
  * [Modified] Modern CSS Reset
@@ -216,7 +216,7 @@ button.button {
   align-self: start;
   background-color: var(--color-secondary);
   color: #fff;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 
   padding: 0.3em 1.25em;
@@ -255,9 +255,9 @@ section {
 }
 
 #Lorem-1 ul li {
-  padding: 1rem;
+  padding: 4rem 1rem 1rem 1rem;
   background: var(--color-background-light);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
 }
 
 #Lorem-1 ul li h3 {
@@ -266,4 +266,47 @@ section {
 
 #Lorem-1 ul li p {
   font-size: 0.8rem;
+}
+
+/*icons*/
+.gg-controller {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(1.5) translate(12px, -20px);
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  border-radius: 100px;
+}
+.gg-controller::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  box-shadow: -6px -6px 0 -4px, 6px 6px 0 -4px, 6px -6px 0 -4px, -6px 6px 0 -4px;
+  left: -5px;
+  top: -5px;
+  transform: rotate(45deg);
+}
+
+#Lorem-2 ul {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
+}
+
+#Lorem-2 li {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#Lorem-2 img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  height: 30vh;
+  margin-bottom: 1.5rem;
 }
