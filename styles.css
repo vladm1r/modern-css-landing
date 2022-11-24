@@ -310,3 +310,41 @@ section {
   height: 30vh;
   margin-bottom: 1.5rem;
 }
+
+#Lorem-3 {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      var(--color-background)
+    ),
+    url("image.jpg");
+  background-size: cover;
+  text-align: center;
+}
+
+#Lorem-3 {
+  padding: 10rem 2rem;
+}
+
+#Lorem-3 h2,
+#Lorem-3 p {
+  color: var(--color-primary);
+}
+
+footer {
+  padding: 2rem;
+  background: var(--color-primary);
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  font-size: var(--font-size-text);
+}
+
+footer span:nth-child(1) {
+  text-transform: uppercase;
+}
