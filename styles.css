@@ -329,7 +329,7 @@ section {
       rgba(255, 255, 255, 0),
       var(--color-background)
     ),
-    url("city.jpg");
+    url("modern-css-landing/city.jpg");
   background-size: cover;
   text-align: center;
 }
