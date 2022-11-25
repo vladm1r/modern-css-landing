@@ -17,6 +17,7 @@
   --font-size-h4: 1.35rem;
   --font-size-text: 1.15rem;
   --border-radius: 0.5rem;
+  --side-padding: clamp(1rem, 6vw, 2rem);
 }
 /*
  * [Modified] Modern CSS Reset
@@ -97,6 +98,10 @@ h1 {
 
 h2 {
   font-size: var(--font-size-h2);
+  font-size: clamp(1.5rem, 4vw, var(--font-size-h2));
+}
+
+header h2 {
   font-size: clamp(1rem, 4vw, var(--font-size-h2));
 }
 
@@ -106,7 +111,6 @@ ul {
 }
 
 #main {
-  padding: 2rem 0;
   background-color: var(--color-primary);
 }
 
@@ -132,7 +136,7 @@ p {
 }
 
 header {
-  padding: 10vh 2rem;
+  padding: 10vh var(--side-padding);
   color: var(--color-primary);
 }
 
@@ -167,7 +171,7 @@ body {
 
 nav {
   width: 100%;
-  padding: 4vh 2rem;
+  padding: clamp(2vh, 2vw, 4vh) 2rem;
 }
 nav ul {
   display: -webkit-box;
@@ -186,7 +190,7 @@ nav ul a {
   display: inline-grid;
   padding: 0.5rem;
   color: var(--color-primary);
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 2vw, 1rem);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: var(--font-weight-strong);
@@ -231,17 +235,21 @@ button.button {
 
 a.button:hover,
 button.button:hover {
-  padding-left: 2em;
+  transform: translateX(1rem);
 }
 
 section {
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 3rem, 4rem) var(--side-padding);
 }
 
 .row {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
+}
+
+#Lorem-1 {
+  padding-top: clamp(4rem, 5rem, 6rem);
 }
 
 #Lorem-1 .row {
@@ -292,6 +300,10 @@ section {
   transform: rotate(45deg);
 }
 
+#Lorem-2 {
+  padding-bottom: clamp(4rem, 5rem, 6rem);
+}
+
 #Lorem-2 ul {
   display: grid;
   gap: 20px;
@@ -317,7 +329,7 @@ section {
       rgba(255, 255, 255, 0),
       var(--color-background)
     ),
-    url("image.jpg");
+    url("city.jpg");
   background-size: cover;
   text-align: center;
 }
